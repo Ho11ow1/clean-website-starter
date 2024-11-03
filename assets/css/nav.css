@@ -1,0 +1,151 @@
+@import url('base.css');
+
+/*=============== HEADER & NAV ===============*/
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: var(--z-fixed);
+    transition: .3s;
+}
+
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo{
+    color: var(--black);
+    font-weight: var(--font-semibold);
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+.nav-toggle,
+.nav-close{
+    display: flex;
+    font-size: 1.25rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+}
+
+.nav-link{
+    color: var(--black);
+    font-weight: var(--font-normal);
+    transition: .3s;
+}
+
+.nav-link:hover{
+    color: var(--vshojo-pink);
+    text-decoration: none;
+}
+
+.nav-close{
+    position: absolute;
+    top: 2.75rem;
+    right: 1.5rem;
+}
+
+/*===== SHOW MENU =====*/
+.show-menu{
+    top:0;
+}
+
+/*=====  Change background header ===== */
+.sticky-header{
+    background-color: var(--dark-white);
+    box-shadow: 0 1px 12px hsla(0, 0%, 20%, 0.3);
+}
+
+/*=====  Active link =====*/
+.active-link{
+    color: var(--vshojo-pink);
+}
+
+/* Modern browsers with :has() support */
+@supports (selector(:has(*))){
+    .nav-item:has(.active-link)::after {
+        border-bottom-color: var(--vshojo-pink);
+    }
+}
+/* Firefox fallback */
+.nav-item.active::after{  /* Changed selector to match new class */
+    border-bottom-color: var(--vshojo-pink);
+}
+
+/*=============== BREAKPOINTS ===============*/
+
+/*========== HEADER & NAV ==========*/
+
+/* For mobile and tablet */
+@media screen and (max-width: 767px){
+    .nav-menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: var(--dark-white);
+        width: 100%;
+        padding: 4rem 0 3rem;
+        transition: .4s;
+        box-shadow: 0 1px 12px hsla(0, 0%, 20%, 0.5);
+    }
+    .nav-menu.show-menu{
+        top: 0;
+    }
+    .nav-item{
+        position: relative;     /* needed for absolute positioning of ::after */
+        padding-bottom: 1rem;   /*space below each item */
+        width:100%;
+        text-align:center;
+    }
+    .nav-item::after{
+        content:"";
+        position:absolute;
+        left:40%;  /*centers the line (100% - width)/2 */
+        bottom:0;
+        width:20%;
+        border-bottom:3px solid var(--vshojo-light-gray);
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 767px){
+    .nav-toggle,
+    .nav-close{
+        display: none;
+    }
+    .nav-list{
+        flex-direction: row;
+        column-gap: 3.5rem;
+    }
+    .nav-menu{
+        position: static;
+        width: auto;
+        padding: 0;
+        background-color: transparent;
+    }
+    .nav-item{
+        position: relative;
+    }
+    .nav-item::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.5rem;
+        width: 100%;
+        border-bottom: 3px solid transparent;
+    }
+}
+
