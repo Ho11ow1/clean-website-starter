@@ -2,8 +2,8 @@
 
 A modern, responsive template with a focus on performance and accessibility. Built with pure HTML, CSS, and JavaScript.
 
-![Language Split](https://img.shields.io/badge/CSS-48.9%25-blue)
-![Language Split](https://img.shields.io/badge/HTML-32.0%25-orange)
+![Language Split](https://img.shields.io/badge/CSS-48.7%25-blue)
+![Language Split](https://img.shields.io/badge/HTML-32.2%25-orange)
 ![Language Split](https://img.shields.io/badge/JavaScript-19.1%25-yellow)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
 
