@@ -1,7 +1,7 @@
 /*=============== NAV MENU ===============*/
-const navMenu = document.getElementById('nav_menu'),
-      navToggle = document.getElementById('nav_toggle'),
-      navClose = document.getElementById('nav_close')
+const navMenu = document.getElementById('nav_menu');
+const navToggle = document.getElementById('nav_toggle');
+const navClose = document.getElementById('nav_close');
 
 /*===== Show =====*/
 if(navToggle)
@@ -48,7 +48,8 @@ window.addEventListener('scroll', scrollHeader)
 /*=============== ACTIVE ELEMENT ===============*/
 const sections = document.querySelectorAll('section[id]')
 
-function scrollActive() {
+function scrollActive() 
+{
     const scrollY = window.scrollY
 
     sections.forEach(current => {
@@ -59,10 +60,13 @@ function scrollActive() {
         const navLink = document.querySelector('.nav-link[href*=' + sectionId + ']')
         const navItem = navLink.closest('.nav-item')  // Get the parent nav-item
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) 
+        {
             navLink.classList.add('active-link')
             navItem.classList.add('active')  // Add active class to parent
-        } else {
+        } 
+        else 
+        {
             navLink.classList.remove('active-link')
             navItem.classList.remove('active')
         }

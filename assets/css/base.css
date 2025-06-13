@@ -2,15 +2,15 @@
 
 :root{
     /* Colour Modes HSL(hue, saturation, lightness)*/
-    --white: hsl(0, 0%, 100%);
-    --dark-white: hsl(0, 0%, 95%);
-    --black: hsl(0, 0%, 0%);
+    --white: #FFFFFF;
+    --dark-white: #F2F2F2;
+    --black: #000000;
     --body-colour:var(--white);
 
-    --live: hsl(0 100% 50%);
-    --vshojo-pink: hsl(333.39 92% 50.98%);
-    --vshojo-dark-gray: hsl(0 0% 16.47%);
-    --vshojo-light-gray: hsl(0 0% 43.92%);
+    --live: #FF0000;
+    --vshojo-pink: #F50F75;
+    --vshojo-dark-gray: #2A2A2A;
+    --vshojo-light-gray: #707070;
 
     /*========== Font and Typography ==========*/
     --body-font: "Poppins", sans-serif;
@@ -38,10 +38,9 @@
     box-sizing:border-box;
     padding:0;
     margin:0;
-    transition: transform .3s cubic-bezier(0.4, 0, 0 .2, 1), 
-                color 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
 	/* UNCOMMENT FOR OVERFLOW DEBUGGING */
-    /* outline: 2px solid hsl(120 100% 50%); */
+    /* outline: 2px solid #00FF00; */
 }
 
 html{
